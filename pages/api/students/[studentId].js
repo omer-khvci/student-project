@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import Students from "@/models/studentModel";
 import { dbConnect } from "@/config/db";
+import { useRouter } from "next/router";
 
 dbConnect();
 

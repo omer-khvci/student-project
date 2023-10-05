@@ -1,20 +1,29 @@
-import '@/styles/globals.css'
+import '@/styles/globals.css';
 import Head from 'next/head';
-import Home from '.';
+import Layout from './layout';
 
-const App = (props) =>{
-  const {Component, pageProps} = props;
+const App = (props) => {
+  const { Component, pageProps } = props;
 
-  const getLayout = Component.Layout ?? (page => <Home>{page}</Home>)
+  const GetLayout = () => {
+    if (Component.Layout == null) {
+      return <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    } else {
+      return <Component {...pageProps} />
+    }
+  }
 
-  return(
+  return (
     <>
       <Head>
         <title>{`Deneme`}</title>
-      <meta name='viewport' content='initial-scale=1, width=device-width' />
+        <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
       <div>
-        {getLayout(<Component {...pageProps} />)}
+
+        {GetLayout()}
       </div>
     </>
   )
