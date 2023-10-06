@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind component;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply bg-slate-500
+    }
+}

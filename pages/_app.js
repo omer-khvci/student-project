@@ -18,7 +18,7 @@ const App = (props) => {
   return (
     <>
       <Head>
-        <title>{`Deneme`}</title>
+        <title>{`Student System`}</title>
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
       <div>
