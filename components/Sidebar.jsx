@@ -2,7 +2,7 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
-const Sidebar = () => {
+const Sidebar = ({studentList}) => {
     const deperments = ["9","10","11","12"];
   return (
     <div className="w-full px-4 pt-16 h-screen overflow-auto">
@@ -43,8 +43,10 @@ const Sidebar = () => {
                               />
                             </Disclosure.Button>
                             <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                              If you're unhappy with your purchase for any reason, email us
-                              within 90 days and we'll refund you in full, no questions asked.
+                                {studentList.filter((data)=>data.department === deperment).map((student)=>(
+                                  // eslint-disable-next-line react/jsx-key
+                                  <h3>{student.fullname}</h3>
+                                ))}
                             </Disclosure.Panel>
                           </>
                         )}

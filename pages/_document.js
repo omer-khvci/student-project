@@ -10,7 +10,7 @@ class CustomDocument extends Document {
         return (<Html lang='en' >
             <Head>
             </Head>
-            <body className='flex flex-row'>
+            <body>
                 <Main />
                 <NextScript />
             </body>
